@@ -7,16 +7,20 @@
 #include "hillside48.dtsi" 
 
 &kscan0 {
-    col-gpios
-        = <&pro_micro 19 GPIO_ACTIVE_HIGH> // col0 in the schematic
-        , <&pro_micro 18 GPIO_ACTIVE_HIGH> // col1 in the schematic
-        , <&pro_micro 15 GPIO_ACTIVE_HIGH> // col2 in the schematic
-        , <&pro_micro 14 GPIO_ACTIVE_HIGH> // col3 in the schematic
-        , <&pro_micro 16 GPIO_ACTIVE_HIGH> // col4 in the schematic
-        , <&pro_micro 10 GPIO_ACTIVE_HIGH> // col5 in the schematic
-        ;
-};
+       col-gpios
+            = <&gpio0 11 GPIO_ACTIVE_HIGH>
+            , <&gpio1 4 GPIO_ACTIVE_HIGH>
+            , <&gpio1 6 GPIO_ACTIVE_HIGH>
+            , <&gpio0 31 GPIO_ACTIVE_HIGH>
+            , <&gpio0 29 GPIO_ACTIVE_HIGH>
+            , <&gpio0 2 GPIO_ACTIVE_HIGH>
+            , <&gpio1 15 GPIO_ACTIVE_HIGH>
+            , <&gpio1 13 GPIO_ACTIVE_HIGH>
+            , <&gpio1 11 GPIO_ACTIVE_HIGH>
+            , <&gpio0 10 GPIO_ACTIVE_HIGH>
+            , <&gpio0 9 GPIO_ACTIVE_HIGH>
+            , <&gpio0 19 GPIO_ACTIVE_HIGH>
+            , <&gpio0 21 GPIO_ACTIVE_HIGH>
+            ;
 
-&left_encoder {
-    status = "okay";
 };
