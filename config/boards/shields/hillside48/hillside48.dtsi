@@ -30,7 +30,7 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(3,6) RC(3,7) RC(3,8) RC(3,9) 
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
 
-        diode-direction = "col2row";
+        diode-direction = "row2col";
         row-gpios
             = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
