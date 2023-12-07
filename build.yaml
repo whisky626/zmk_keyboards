@@ -18,5 +18,3 @@ include:
 #   Comment out below if you do not have this board, to save build time
   - board: nice_nano_v2
     shield: hillside48_left
-  - board: nice_nano_v2
-    shield: hillside48_right
