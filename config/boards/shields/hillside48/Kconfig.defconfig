@@ -1,7 +1,7 @@
 # Copyright (c) 2021 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_HILLSIDE48_LEFT
+if SHIELD_HILLSIDE48
 
 config ZMK_KEYBOARD_NAME
     default "袁涵的KEYBOARD"
