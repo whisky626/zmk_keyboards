@@ -4,6 +4,6 @@
 if SHIELD_HILLSIDE48
 
 config ZMK_KEYBOARD_NAME
-    default "袁涵的KEYBOARD"
+    default "hillside48"
 
 endif
