@@ -26,6 +26,7 @@
 &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA &kp DOT  &kp SLASH &kp RSHFT &kp C_MUTE
 &kp LCTRL  &kp LALT                    &kp SPACE                      &kp RGUI &mo FN
             >;
+sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
 fn_layer {
@@ -36,6 +37,7 @@ fn_layer {
 &trans &kp DEL &kp END &kp PG_DN &trans &to BT &trans &trans &kp LEFT &kp DOWN     &kp RIGHT &trans  &trans
 &trans &trans               &trans                      &trans   &trans
             >;
+sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
         };
 
         bt_layer {
@@ -46,6 +48,7 @@ fn_layer {
 &none &none &none &bt BT_CLR &none &bootloader &none &none &none &none &none &none &none
 &none &none             &none                   &none &none
 >;
+sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
     };
 };
 
