@@ -26,7 +26,7 @@
 &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA &kp DOT  &kp SLASH &kp RSHFT &kp C_MUTE
 &kp LCTRL  &kp LALT                    &kp SPACE                      &kp RGUI &mo FN
             >;
-sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
         };
 
 fn_layer {
@@ -37,7 +37,7 @@ fn_layer {
 &trans &kp DEL &kp END &kp PG_DN &trans &to BT &trans &trans &kp LEFT &kp DOWN     &kp RIGHT &trans  &trans
 &trans &trans               &trans                      &trans   &trans
             >;
-sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
+sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         bt_layer {
