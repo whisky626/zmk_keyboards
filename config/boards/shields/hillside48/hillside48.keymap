@@ -12,8 +12,7 @@
 
 #define QWERTY_L 0
 #define SYM_L    1
-#define NUM_L    2
-#define ADJ_L    3
+
 
 / {
         keymap {
