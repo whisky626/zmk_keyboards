@@ -6,7 +6,11 @@
 
 #include "hillside48.dtsi" 
 
- kscan0: kscan {
+&default_transform {
+    col-offset = <5>;
+};
+
+kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
 
