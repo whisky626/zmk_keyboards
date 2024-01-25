@@ -4,7 +4,7 @@
 if SHIELD_HILLSIDE48_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "Willie 1/1"
+    default "Willie"
 
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
     default y
