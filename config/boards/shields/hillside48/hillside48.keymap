@@ -11,8 +11,6 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define QWERTY_L 0
-#define SYM_L    1
-
 
 / {
         keymap {
@@ -30,33 +28,12 @@
  &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                                                                         &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P       
  &kp  A        &kp  S        &kp  D        &kp  F        &kp  G                                                                         &kp  H        &kp  J        &kp  K        &kp  L        &kp  ENTER   
  &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                                                                         &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp BSPC 
-                          &kp  LALT     &kp LCTRL    &mo  SYM_L                                                                        &none    &kp  SPACE    &kp  LALT   
-                        >;
-			
-                        sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-                };
-		
-              
-		
-           	
-                sym_layer {
-/* SYM
- * -------------------------------------------------------------------------------------------------------------------------------------
- * | HOME  |   !   |   @   |   #   |   $   |   %   |-----------------------------------|   ^   |   &   |   *   |   (   |   )   | BSPC  |
- * | END   |  GUI  |  Alt  | Ctrl  | Shift | Pg Up |-----------------------------------|   -   |   =   |   [   |   ]   |   \   | ENTER |
- * | Shift |  UnDo |  Cut  | Copy  | Paste | Pg Dn |OsAltGr|-------------------| MENU  |   _   |   +   |   {   |   }   |   |   | SHIFT |
- * ----------------|       |-------|       |       |       |       |---| ADJ_L |       |       |       |-------| CTRL  |----------------
- */
-                        bindings = <
- &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                                                                         &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P       
- &kp  A        &kp  S        &kp  D        &kp  F        &kp  G                                                                         &kp  H        &kp  J        &kp  K        &kp  L        &kp  ENTER   
- &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                                                                         &kp  N        &kp  M        &kp  COMMA    &kp  DOT      &kp BSPC 
                           &kp  LALT     &kp LCTRL    &none                                                                        &none    &kp  SPACE    &kp  LALT   
                         >;
 			
                         sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
                 };
+		
 
-               
         };
 };
