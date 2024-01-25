@@ -24,8 +24,8 @@
  * ------------------------------------------------------------------------------------------------------------------------------
  * |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Y   |   U   |   I   |   O   |   P   | 
  * |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   | ENTER | 
- * |   Z   |   X   |   C   |   V   |   B   | ----------------------------------|   N   |   M   | CAPS  |  GUI  | SHIFT | 
- * ----------------|  BOOT |  CTRL | SPACE | ----------------------------------|  NUM  |  BSPC |  BOOT |-----------------------
+ * |   Z   |   X   |   C   |   V   |   B   | ----------------------------------|   N   |   M   | CAPS  |  WIN  | SHIFT | 
+ * ----------------|  BOOT |  CTRL | SPACE | ----------------------------------|  MO 1 |  BSPC |  BOOT |-----------------------
  */
                         bindings = <
  &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                                                                         &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P       
@@ -42,14 +42,14 @@
  * ------------------------------------------------------------------------------------------------------------------------------
  * |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |   0   | 
  * |   -   |   =   |   [   |   ]   |   \   |-----------------------------------|   ;   |   '   |   ,   |   .   |   /   | 
- * |  TAB  |   `   |  INS  |  HOME |  PGUP | ----------------------------------|  DEL  |  END  |  PGDN |       |       | 
- * ----------------|       |  ESC  |  ADJ  | ----------------------------------|  MO   |       |  MUTE |-----------------------
+ * |  TAB  |   `   |  INS  |  HOME |  PGUP | ----------------------------------|  DEL  |  END  |  PGDN |  WIN  | SHIFT | 
+ * ----------------|       |  ESC  |  TO 2 | ----------------------------------|       |  BSPC |  MUTE |-----------------------
  */
                         bindings = <
  &kp  N1       &kp  N2       &kp  N3       &kp  N4       &kp  N5                                                                        &kp  N6       &kp  N7       &kp  N8       &kp  N9       &kp N0       
  &kp MINUS     &kp EQUAL     &kp LBKT      &kp RBKT      &kp BSLH                                                                       &kp SEMI      &kp SQT       &kp COMMA     &kp DOT       &kp SLASH  
- &kp TAB       &kp GRAVE     &kp INS       &kp HOME      &kp PG_UP                                                                      &kp DEL       &kp END       &kp PG_DN        &trans        &trans 
-                             &trans        &kp ESC       &to ADJ                                                                        &trans        &trans        &kp C_MUTE   
+ &kp TAB       &kp GRAVE     &kp INS       &kp HOME      &kp PG_UP                                                                      &kp DEL       &kp END       &kp PG_DN     &trans        &trans 
+                             &none         &kp ESC       &to ADJ                                                                        &trans        &trans        &kp C_MUTE   
                         >;
 			
                         sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_VOL_UP C_VOL_DN>;
