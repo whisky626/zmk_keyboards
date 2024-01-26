@@ -11,7 +11,7 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
-#define QWERTY_L 0
+#define DEFAULT 0
 #define NUM    1
 #define ADJ    2
 
@@ -31,7 +31,7 @@
  &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                                                                         &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P       
  &kp  A        &kp  S        &kp  D        &kp  F        &kp  G                                                                         &kp  H        &kp  J        &kp  K        &kp  L        &kp  ENTER   
  &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                                                                         &kp  N        &kp  M        &kp CAPS      &kp RGUI      &kp  RSHFT 
-                             &bootloader   &kp LCTRL     &kp SPACE                                                                      &mo NUM       &kp BSPC      &bootloader   
+                             &kp ESC       &kp LCTRL     &kp SPACE                                                                      &mo NUM       &kp BSPC      &kp C_MUTE   
                         >;
 			
                         sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -43,13 +43,13 @@
  * |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |   0   | 
  * |   -   |   =   |   [   |   ]   |   \   |-----------------------------------|   ;   |   '   |   ,   |   .   |   /   | 
  * |  TAB  |   `   |  INS  |  HOME |  PGUP | ----------------------------------|  DEL  |  END  |  PGDN |  WIN  | SHIFT | 
- * ----------------|       |  ESC  |  TO 2 | ----------------------------------|       |  BSPC |  MUTE |-----------------------
+ * ----------------|       |  CTRL |  TO 2 | ----------------------------------|       |  BSPC |  BOOT |-----------------------
  */
                         bindings = <
  &kp  N1       &kp  N2       &kp  N3       &kp  N4       &kp  N5                                                                        &kp  N6       &kp  N7       &kp  N8       &kp  N9       &kp N0       
  &kp MINUS     &kp EQUAL     &kp LBKT      &kp RBKT      &kp BSLH                                                                       &kp SEMI      &kp SQT       &kp COMMA     &kp DOT       &kp SLASH  
  &kp TAB       &kp GRAVE     &kp INS       &kp HOME      &kp PG_UP                                                                      &kp DEL       &kp END       &kp PG_DN     &trans        &trans 
-                             &none         &kp ESC       &to ADJ                                                                        &trans        &trans        &kp C_MUTE   
+                             &none         &trans        &to ADJ                                                                        &trans        &trans        &bootloader   
                         >;
 			
                         sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -61,13 +61,13 @@
  * |  BT0  |  BT1  |  BT2  |  BT3  |  BT4  |-----------------------------------|   F1  |   F2  |   F3  |   F4  |   F5  | 
  * |  RGB  |  EFR  |  RED  |  SPI  |  BRI  |-----------------------------------|   F6  |   F7  |   F8  |   F9  |   F10 | 
  * | BT_CLR| RESET | PURPLE|  SPD  |  BRD  | ----------------------------------|   USB |   BLE |       |   F11 |   F12 | 
- * ----------------|       | POWER | TO 0  | ----------------------------------|       |       |       |-----------------------
+ * ----------------|  BOOT | POWER | TO 0  | ----------------------------------|       |       |  BOOT |-----------------------
  */
                         bindings = <  
  &bt  BT_SEL 0    &bt  BT_SEL 1     &bt  BT_SEL 2                         &bt  BT_SEL 3 &bt  BT_SEL 4                   &kp  F1       &kp  F2       &kp  F3       &kp  F4       &kp  F5            
  &rgb_ug RGB_TOG  &rgb_ug RGB_EFR   &rgb_ug RGB_COLOR_HSB(255,100,100)    &rgb_ug RGB_SPI    &rgb_ug RGB_BRI            &kp  F6       &kp  F7       &kp  F8       &kp  F9       &kp  F10  
  &bt BT_CLR       &sys_reset        &rgb_ug RGB_COLOR_HSB(328,100,49)     &rgb_ug RGB_SPD    &rgb_ug RGB_BRD            &out OUT_USB  &out OUT_BLE  &none         &kp  F11      &kp  F12
-                                    &none                                 &ext_power EP_TOG  &to default                &none         &none         &none           
+                                    &bootloader                           &ext_power EP_TOG  &to DEFAULT                &none         &none         &bootloader           
                         >;
 			
                         sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp C_VOL_UP C_VOL_DN>;
