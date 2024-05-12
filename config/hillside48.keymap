@@ -77,14 +77,19 @@
             bindings = <&kp P>, <&kp BSPC>;
             mods = <(MOD_RSFT)>;
         };
+};
 
- gresc: q_tab {
+
+ behaviors {
+         gresc: q_tab {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp Q>, <&kp TAB>;
             mods = <(MOD_RSFT)>;
         };
+};
 
+behaviors {
 gresc: a_caps {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
