@@ -28,8 +28,8 @@
  * ----------------        |  CTRL | SPACE | ----------------------------------|  LALT |  MO 1 |-----------------------
  */
                         bindings = <
- &qtab         &kp  W        &kp  E        &kp  R        &kp  T                          &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P       
- &kp  A        &kp  S        &kp  D        &kp  F        &kp  G                          &kp  H        &kp  J        &kp  K        &kp  L        &kp  ENTER   
+ &qtab         &kp  W        &kp  E        &kp  R        &kp  T                          &kp  Y        &kp  U        &kp  I        &kp  O        &pbspc       
+ &acaps        &kp  S        &kp  D        &kp  F        &kp  G                          &kp  H        &kp  J        &kp  K        &kp  L        &kp  ENTER   
  &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &kp  N        &kp  M        &kp CAPS      &kp RGUI      &kp  RSHFT 
                                            &kp LCTRL     &kp SPACE                       &kp RALT      &mo NUM   
                   >;
