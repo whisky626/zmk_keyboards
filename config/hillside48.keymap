@@ -79,23 +79,4 @@
         };
 };
 
-
- behaviors {
-         gresc: q_tab {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp Q>, <&kp TAB>;
-            mods = <(MOD_RSFT)>;
-        };
-};
-
-behaviors {
-gresc: a_caps {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp A>, <&kp CAPS>;
-            mods = <(MOD_RSFT)>;
-        };
-    };
-
 };
