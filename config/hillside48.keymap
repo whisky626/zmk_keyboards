@@ -22,14 +22,14 @@
                 default_layer {
 /* QWERTY
  * ------------------------------------------------------------------------------------------------------------------------------
- * |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Y   |   U   |   I   |   O   |   P   | 
- * |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   | ENTER | 
+ * | Q/TAB |   W   |   E   |   R   |   T   |-----------------------------------|   Y   |   U   | I/INS |   O   | P/BBPC| 
+ * | A/CAPS|   S   | D/DEL |   F   |   G   |-----------------------------------| H/HOME|   J   |   K   |   L   | ENTER | 
  * |   Z   |   X   |   C   |   V   |   B   | ----------------------------------|   N   |   M   | LEFT  | RIGHT | SHIFT | 
- * ----------------        |  CTRL | SPACE | ----------------------------------|  LALT |  MO 1 |-----------------------
+ * ------------------------|  CTRL | SPACE | ----------------------------------|   ALT |  MO 1 |-----------------------
  */
                         bindings = <
  &qtab         &kp  W        &kp  E        &kp  R        &kp  T                          &kp  Y        &kp  U        &iins         &kp  O        &pbspc       
- &acaps        &kp  S        &ddel         &kp  F        &kp  G                          &kp  H        &kp  J        &kp  K        &kp  L        &kp  ENTER   
+ &acaps        &kp  S        &ddel         &kp  F        &kp  G                          &hhome        &kp  J        &kp  K        &kp  L        &kp  ENTER   
  &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &kp  N        &kp  M        &leftup       &rightdown    &kp  RSHFT 
                                            &kp LCTRL     &kp SPACE                       &kp RALT      &mo NUM   
                   >;
@@ -103,6 +103,13 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp I>, <&kp INS>;
+            mods = <(MOD_RSFT)>;
+        };
+
+        hhome: h_home {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp H>, <&kp HOME>;
             mods = <(MOD_RSFT)>;
         };
 
