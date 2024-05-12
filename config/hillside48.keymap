@@ -31,7 +31,7 @@
  &qtab         &kp  W        &eesc         &kp  R        &kp  T                          &kp  Y        &kp  U        &iins         &kp  O        &kp  P       
  &acaps        &kp  S        &ddel         &kp  F        &kp  G                          &hhome        &kp  J        &kp  K        &kp  L        &kp  ENTER   
  &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &kp  N        &kp  M        &leftup       &rightdown    &kp  RSHFT 
-                                           &kp LCTRL     &kp SPACE                       &kp RGUI      &mo NUM   
+                                           &kp LCTRL     &kp SPACE                       &guibspc      &mo NUM   
                   >;
 		  };
 
