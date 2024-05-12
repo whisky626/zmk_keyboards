@@ -24,13 +24,13 @@
  * ------------------------------------------------------------------------------------------------------------------------------
  * |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Y   |   U   |   I   |   O   |   P   | 
  * |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   | ENTER | 
- * |   Z   |   X   |   C   |   V   |   B   | ----------------------------------|   N   |   M   | CAPS  |  WIN  | SHIFT | 
+ * |   Z   |   X   |   C   |   V   |   B   | ----------------------------------|   N   |   M   | LEFT  | RIGHT | SHIFT | 
  * ----------------        |  CTRL | SPACE | ----------------------------------|  LALT |  MO 1 |-----------------------
  */
                         bindings = <
- &qtab         &kp  W        &kp  E        &kp  R        &kp  T                          &kp  Y        &kp  U        &kp  I        &kp  O        &pbspc       
- &acaps        &kp  S        &kp  D        &kp  F        &kp  G                          &kp  H        &kp  J        &kp  K        &kp  L        &kp  ENTER   
- &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &kp  N        &kp  M        &kp CAPS      &kp RGUI      &kp  RSHFT 
+ &qtab         &kp  W        &kp  E        &kp  R        &kp  T                          &kp  Y        &kp  U        &iins         &kp  O        &pbspc       
+ &acaps        &kp  S        &ddel         &kp  F        &kp  G                          &kp  H        &kp  J        &kp  K        &kp  L        &kp  ENTER   
+ &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &kp  N        &kp  M        &leftup       &rightdown    &kp  RSHFT 
                                            &kp LCTRL     &kp SPACE                       &kp RALT      &mo NUM   
                   >;
 		  };
@@ -91,6 +91,36 @@
             bindings = <&kp A>, <&kp CAPS>;
             mods = <(MOD_RSFT)>;
         };
+
+        ddel: d_del {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp D>, <&kp DEL>;
+            mods = <(MOD_RSFT)>;
+        };
+
+        iins: i_ins {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp I>, <&kp INS>;
+            mods = <(MOD_RSFT)>;
+        };
+
+        leftup: left_up {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT>, <&kp UP>;
+            mods = <(MOD_RSFT)>;
+        };
+
+        rightdown: right_down {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT>, <&kp DOWN>;
+            mods = <(MOD_RSFT)>;
+        };
+  
+
   };
 
 };
