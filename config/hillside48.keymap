@@ -22,16 +22,16 @@
                 default_layer {
 /* QWERTY
  * ------------------------------------------------------------------------------------------------------------------------------
- * | Q/TAB |   W   |   E   |   R   |   T   |-----------------------------------|   Y   |   U   | I/INS |   O   | P/BBPC| 
+ * | Q/TAB |   W   | E/ESC |   R   |   T   |-----------------------------------|   Y   |   U   | I/INS |   O   |   P   | 
  * | A/CAPS|   S   | D/DEL |   F   |   G   |-----------------------------------| H/HOME|   J   |   K   |   L   | ENTER | 
- * |   Z   |   X   |   C   |   V   |   B   | ----------------------------------|   N   |   M   | LEFT  | RIGHT | SHIFT | 
- * ------------------------|  CTRL | SPACE | ----------------------------------|   ALT |  MO 1 |-----------------------
+ * |   Z   |   X   |   C   |   V   |   B   | ----------------------------------|   N   |   M   | LT/UP | RT/DN | SHIFT | 
+ * ------------------------|  CTRL | SPACE | ----------------------------------|  WIN  |  MO 1 |-----------------------
  */
                         bindings = <
- &qtab         &kp  W        &kp  E        &kp  R        &kp  T                          &kp  Y        &kp  U        &iins         &kp  O        &pbspc       
+ &qtab         &kp  W        &eesc         &kp  R        &kp  T                          &kp  Y        &kp  U        &iins         &kp  O        &kp  P       
  &acaps        &kp  S        &ddel         &kp  F        &kp  G                          &hhome        &kp  J        &kp  K        &kp  L        &kp  ENTER   
  &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &kp  N        &kp  M        &leftup       &rightdown    &kp  RSHFT 
-                                           &kp LCTRL     &kp SPACE                       &kp RALT      &mo NUM   
+                                           &kp LCTRL     &kp SPACE                       &kp RGUI      &mo NUM   
                   >;
 		  };
 
@@ -39,15 +39,15 @@
 /* NUM
  * ------------------------------------------------------------------------------------------------------------------------------
  * |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |   0   | 
- * |  TAB  |   =   |   [   |   ]   |   \   |-----------------------------------|   -   |   =   |   [   |   ]   |   \   | 
- * |  CAPS |   `   |  INS  |  HOME |  PGUP | ----------------------------------|   ;   |   '   |   ,   |   .   |   /   | 
+ * |       |       |   [   |   ]   |   \   |-----------------------------------|       |       |       |       |       | 
+ * |   ;   |   '   |   ,   |   .   |   /   | ----------------------------------|       |       |   -   |   =   |       | 
  * ----------------        |  CTRL |  TO 2 | ----------------------------------|       |       |-----------------------
  */
                         bindings = <
  &kp  N1       &kp  N2       &kp  N3       &kp  N4       &kp  N5                                                                        &kp  N6       &kp  N7       &kp  N8       &kp  N9       &kp N0       
- &kp TAB       &kp EQUAL     &kp LBKT      &kp RBKT      &kp BSLH                                                                       &kp MINUS     &kp EQUAL     &kp LBKT      &kp RBKT      &kp BSLH 
- &kp CAPS      &kp GRAVE     &kp INS       &kp HOME      &kp PG_UP                                                                      &kp SEMI      &kp SQT       &kp COMMA     &kp DOT       &kp SLASH 
-                                           &trans        &to ADJ                                                                        &trans        &trans         
+ &trans        &trans        &kp LBKT      &kp RBKT      &kp BSLH                                                                       &trans        &trans        &trans        &trans        &trans 
+ &kp SEMI      &kp SQT       &kp COMMA     &kp DOT       &kp SLASH                                                                      &trans        &trans        &kp MINUS     &kp EQUAL     &trans 
+                                           &trans        &to ADJ                                                                        &trans        &trans        
                   >;
 	          };
 
@@ -71,10 +71,10 @@
         };
 
     behaviors {
-        pbspc: p_bspc {
+        guibspc: gui_bspc {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp P>, <&kp BSPC>;
+            bindings = <&kp RGUI>, <&kp BSPC>;
             mods = <(MOD_RSFT)>;
         };
 
@@ -117,6 +117,13 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp LEFT>, <&kp UP>;
+            mods = <(MOD_RSFT)>;
+        };
+
+        eesc: e_esc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp E>, <&kp ESC>;
             mods = <(MOD_RSFT)>;
         };
 
