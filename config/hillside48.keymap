@@ -71,13 +71,32 @@
         };
 
     behaviors {
-        gresc: grave_escape {
+        gresc: P_BSPC {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp P>, <&kp BSPC>;
             mods = <(MOD_RSFT)>;
         };
     };
+
+behaviors {
+        gresc: Q_TAB {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp Q>, <&kp TAB>;
+            mods = <(MOD_RSFT)>;
+        };
+    };
+
+behaviors {
+        gresc: A_CAPS {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kp CAPS>;
+            mods = <(MOD_RSFT)>;
+        };
+    };
+
 
 
 };
