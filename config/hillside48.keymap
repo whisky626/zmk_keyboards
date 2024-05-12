@@ -71,19 +71,19 @@
         };
 
     behaviors {
-        gresc: p_bspc {
+        pbspc: p_bspc {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp P>, <&kp BSPC>;
             mods = <(MOD_RSFT)>;
         };
 
-gresc: q_tab {
+        qtab: q_tab {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp Q>, <&kp TAB>;
             mods = <(MOD_RSFT)>;
         };
-};
+  };
 
 };
