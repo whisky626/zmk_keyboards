@@ -22,9 +22,3 @@
         , <&pro_micro 16 GPIO_ACTIVE_HIGH> // col4 in the schematic
         ;
    };
-
-
-
-&left_encoder {
-    status = "okay";
-};
