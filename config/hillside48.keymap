@@ -25,13 +25,13 @@
  * |   Q   |   W   |   E   |   R   |   T   |-----------------------------------|   Y   |   U   |   I   |   O   |   P   | 
  * |   A   |   S   |   D   |   F   |   G   |-----------------------------------|   H   |   J   |   K   |   L   | ENTER | 
  * |   Z   |   X   |   C   |   V   |   B   | ----------------------------------|   N   |   M   | CAPS  |  WIN  | SHIFT | 
- * ----------------        |  CTRL |  LALT | ----------------------------------|  SPACE|  MO 1 |-----------------------
+ * ----------------        |  CTRL | SPACE | ----------------------------------|  LALT |  MO 1 |-----------------------
  */
                         bindings = <
  &kp  Q        &kp  W        &kp  E        &kp  R        &kp  T                          &kp  Y        &kp  U        &kp  I        &kp  O        &kp  P       
  &kp  A        &kp  S        &kp  D        &kp  F        &kp  G                          &kp  H        &kp  J        &kp  K        &kp  L        &kp  ENTER   
  &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &kp  N        &kp  M        &kp CAPS      &kp RGUI      &kp  RSHFT 
-                                           &kp LCTRL     &kp LALT                        &kp SPACE     &mo NUM   
+                                           &kp LCTRL     &kp SPACE                       &kp LALT      &mo NUM   
                   >;
 		  };
 
@@ -75,6 +75,13 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp P>, <&kp BSPC>;
+            mods = <(MOD_RSFT)>;
+        };
+
+gresc: q_tab {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp Q>, <&kp TAB>;
             mods = <(MOD_RSFT)>;
         };
 };
