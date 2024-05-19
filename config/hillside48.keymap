@@ -158,7 +158,7 @@
         uvup: u_vup {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp M>, <&kp C_VOL_UP>;
+            bindings = <&kp U>, <&kp C_VOL_UP>;
             mods = <(MOD_RSFT)>;
         };
 
