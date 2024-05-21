@@ -22,18 +22,18 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-/* QWERTY
+/*  DEFAULT
  * ------------------------------------------------------------------------------------------------------------------------------
- * | Q/TAB |   W   | E/ESC |   R   |   T   |-----------------------------------|   Y   | U/VUP | I/INS |   O   |   P   | 
- * | A/CAPS|   S   | D/DEL |   F   |   G   |-----------------------------------| H/HOME| J/VDN |   K   |   L   | ENTER | 
- * |   Z   |   X   |   C   |   V   |   B   | ----------------------------------|   N   | M/MUTE| LT/UP | RT/DN | SHIFT | 
- * ------------------------|  CTRL | SPACE | ----------------------------------|  WIN  |  MO 3 |-----------------------
+ * |       |   W   |   C   |   F   |   B   |-----------------------------------|      P   |   L   |   U   |   Y   |       | 
+ * |   A   |   R   |   S   |   T   |   G   |-----------------------------------|      M   |   N   |   E   |   I   |   O   | 
+ * |   J   |   Z   |   Q   |   D   |       | ----------------------------------|          |   H   |   V   |   K   |   X   | 
+ * ------------------------|  MO 4 |  MO 2 | ----------------------------------|SPACE/LT 1|  LSHIFT |-----------------------
  */
                         bindings = <
- &qtab         &kp  W        &eesc         &kp  R        &kp  T                          &kp  Y        &uvup         &iins         &kp  O        &kp  P       
- &acaps        &kp  S        &ddel         &kp  F        &kp  G                          &hhome        &jvdn         &kp  K        &kp  L        &kp  ENTER   
- &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &kp  N        &mmute        &leftup       &rightdown    &kp  RSHFT 
-                                           &kp LCTRL     &kp SPACE                       &guibspc      &mo NUM   
+ &none         &kp  W        &kp  C        &kp  F        &kp  B                         &kp  P        &kp  L        &kp  U        &kp  Y        &none      
+ &kp  A        &kp  R        &kp  S        &kp  T        &kp  G                         &kp  M        &kp  N        &kp  E        &kp  I        &kp  O   
+ &kp  J        &kp  Z        &kp  Q        &kp  D        &none                          &none         &kp  H        &kp  V        &kp  K        &kp  X
+                                           &mo ADJ       &mo PAD                        &lt 1 SPACE   &kp  LSHIFT   
                   >;
 		  };
 
@@ -46,10 +46,10 @@
  * ------------------------|command| SPACE | ----------------------------------|  WIN  |  MO 3 |-----------------------
  */
                         bindings = <
- &qtab         &kp  W        &eesc         &kp  R        &kp  T                          &kp  Y        &uvup         &iins         &kp  O        &kp  P       
- &acaps        &kp  S        &ddel         &kp  F        &kp  G                          &hhome        &jvdn         &kp  K        &kp  L        &kp  ENTER   
- &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &kp  N        &mmute        &leftup       &rightdown    &kp  RSHFT 
-                                           &kp LCMD      &kp SPACE                       &guibspc      &mo NUM   
+ &kp LS(LBKT)   &kp LS(RBKT)     &kp LBKT         &kp  RBKT         &kp LS(N3)                    &kp LS(N5)        &kp KP_PLUS       &kp KP_MINUS     &kp  KP_MULTIPLY   &kp  KP_DIVIDE       
+ &kp LS(N9)     &kp LS(N0)        &kp LS(N6)       &kp LS(MINUS)     &kp LS(COMMA)                &kp LS(DOT)       &kp EQUAL         &kp  COMMA       &kp  DOT           &kp LS(SEMI) 
+ &kp SQT        &kp LS(SQT)        &kp LS(BSLH)         &kp BSLH        &kp LS(N1)                &kp LS(N2)        &kp LS(N4)        &kp LS(N7)       &kp SEMI           &kp LS(FSLH) 
+                                          &trans        &trans                      &trans        &trans   
                   >;
 		  };
 
@@ -57,32 +57,32 @@
                 pad_layer {
 /* PAD
  * ------------------------------------------------------------------------------------------------------------------------------
- * |   7   |   8   |   9   |  UNDO |   DEL |-----------------------------------|       |       |       |       |  BSPC | 
- * |   4   |   5   |   6   |  COPY | PASTE |-----------------------------------|       |       |       |       | ENTER | 
- * |   1   |   2   |   3   |   .   |   0   | ----------------------------------|       |       | LT/UP | RT/DN | SHIFT | 
- * ------------------------|  CTRL | SPACE | ----------------------------------|  WIN  |  MO 3 |-----------------------
+ * |   TAB   |      |  LGUI   |  LALT |   ESC |-----------------------------------|  PGUP  |  HOME   | UP   |  END  |  DEL | 
+ * |   MO 3   |      |      |  LSHIFT | ENTER |-----------------------------------|   PGDN |   LEFT  | DOWN |  RIGHT| BSPC | 
+ * |   TAB   |      |      |      |      | ----------------------------------     |        |          |     |     | ENTER | 
+ * ------------------------|      |     | ----------------------------------|     |      |-----------------------
  */
                         bindings = <
- &kp  KP_N7        &kp  KP_N8        &kp  KP_N9       &kp  K_UNDO        &kp  DEL          &none        &none        &none         &none         &kp  BSPC       
- &kp  KP_N4        &kp  KP_N5        &kp  KP_N6       &kp  K_COPY        &kp  K_PASTE      &none        &none        &none         &none         &kp  ENTER   
- &kp  KP_N1        &kp  KP_N2        &kp  KP_N3       &kp  KP_DOT        &kp  KP_N0        &none        &none        &leftup       &rightdown    &kp  RSHFT 
-                                                      &kp LCTRL          &kp SPACE         &altbspc     &mo NUM   
+ &kp  TAB        &none        &kp  KP_N9       &kp  LALT        &kp  ESC            &kp  PG_UP        &kp  HOME        &kp  UP        &kp  END        &kp  DEL       
+ &mo 3           &none        &kp  KP_N6       &kp  LSHIFT      &kp  K_PASTE        &kp  PG_DN        &kp  LEFT        &kp  DOWN      &kp  RIGHT      &kp  BSPC   
+ &kp  TAB        &none        &none            &none            &none               &none             &kp  LC(LEFT)    &none          &kp  LC(RIGHT)  &kp  ENTER 
+                                               &none            &none               &none     &none   
                   >;
 		  };
 
                  num_layer {
 /* NUM
  * ------------------------------------------------------------------------------------------------------------------------------
- * |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |   0   | 
- * |       |   `   |   [   |   ]   |   \   |-----------------------------------|       |       |       |       |       | 
- * |   ;   |   '   |   ,   |   .   |   /   | ----------------------------------|       |       |   -   |   =   |       | 
- * ----------------        |  CTRL |  TO 4 | ----------------------------------|       |       |-----------------------
+ * |       |   F1   |   F2   |   F3   |   F4   |-----------------------------------|       |   7   |   8   |   9   |   DEL   | 
+ * |       |   F5   |   F6   |   F7   |   F8   |-----------------------------------|       |   4  |    5  |     6 |  BSPC | 
+ * |       |   F9   |   F10  |   F11  |   F12  | ----------------------------------|    0   |   1    |   2  |   3   |  .   | 
+ * ----------------          |        |        | ----------------------------------|       |       |-----------------------
  */
                         bindings = <
- &kp  N1       &kp  N2       &kp  N3       &kp  N4       &kp  N5                                                                        &kp  N6       &kp  N7       &kp  N8       &kp  N9       &kp N0       
- &trans        &kp  GRAVE    &kp LBKT      &kp RBKT      &kp BSLH                                                                       &trans        &trans        &trans        &trans        &trans 
- &kp SEMI      &kp SQT       &kp COMMA     &kp DOT       &kp SLASH                                                                      &trans        &trans        &kp MINUS     &kp EQUAL     &trans 
-                                           &trans        &to ADJ                                                                        &trans        &trans        
+ &none      &kp F1     &kp F2      &kp F3       &kp F4                                                                      &kp LS(N5)    &kp  N7       &kp  N8     &kp  N9      &kp DEL       
+ &none      &kp F5     &kp F6      &kp F7       &kp F8                                                                      &trans        &kp  N4       &kp  N5     &kp  N6      &kp  BSPC  
+ &none      &kp F9     &kp F10     &kp F11      &kp F12                                                                     &kp  N0       &kp  N1       &kp  N2     &kp  N3      &kp KP_DOT
+                                           &trans        &trans                                                                         &trans        &trans        
                   >;
 	          };
 
@@ -95,10 +95,10 @@
  * ----------------        |  TO 1 |  TO 0 | ----------------------------------| TO 2|      |-----------------------
  */
                         bindings = <  
- &bt  BT_SEL 0    &bt  BT_SEL 1     &bt  BT_SEL 2     &bt  BT_SEL 3      &bt  BT_SEL 4                   &kp  F1       &kp  F2       &kp  F3       &kp  F4       &kp  F5            
- &none            &none             &none             &none              &none                           &kp  F6       &kp  F7       &kp  F8       &kp  F9       &kp  F10  
- &bootloader      &sys_reset        &bt BT_CLR        &none              &out OUT_TOG                    &kp  F11      &kp  F12      &none         &sys_reset    &bootloader
-                                                      &to MAC            &to DEFAULT                     &to PAD       &none                  
+ &kp LS(TAB)    &kp LC(X)     &kp LC(C)     &kp LC(V)      &kp LC(FSLH)                   &none      &none     &none       &none      &kp  KP_NUMLOCK            
+ &kp LC(A)      &kp LC(S)      &kp LA(A)        &kp LC(F)    &kp LA(S)                    &none      &none     &none       &none        &none  
+ &kp LC(Z)      &kp LC(Y)       &none      &none           &kp LG(L)                      &none      &none     &none       &none      &none
+                                                       &none             &none                    &none       &none                  
                     >;
 	            };
 
