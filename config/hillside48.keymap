@@ -16,8 +16,14 @@
 #define PAD    2
 #define NUM    3
 #define ADJ    4
+#define BT     5
 
 / {
+
+&mt {
+    retro-tap;
+};
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -49,7 +55,7 @@
  &kp LS(LBKT)   &kp LS(RBKT)     &kp LBKT         &kp  RBKT         &kp LS(N3)                    &kp LS(N5)        &kp KP_PLUS       &kp KP_MINUS     &kp  KP_MULTIPLY   &kp  KP_DIVIDE       
  &kp LS(N9)     &kp LS(N0)        &kp LS(N6)       &kp LS(MINUS)     &kp LS(COMMA)                &kp LS(DOT)       &kp EQUAL         &kp  COMMA       &kp  DOT           &kp LS(SEMI) 
  &kp SQT        &kp LS(SQT)        &kp LS(BSLH)         &kp BSLH        &kp LS(N1)                &kp LS(N2)        &kp LS(N4)        &kp LS(N7)       &kp SEMI           &kp LS(FSLH) 
-                                          &trans        &trans                      &trans        &trans   
+                                          &none             &none                    &none       &none   
                   >;
 		  };
 
@@ -80,9 +86,9 @@
  */
                         bindings = <
  &none      &kp F1     &kp F2      &kp F3       &kp F4                                                                      &kp LS(N5)    &kp  N7       &kp  N8     &kp  N9      &kp DEL       
- &none      &kp F5     &kp F6      &kp F7       &kp F8                                                                      &trans        &kp  N4       &kp  N5     &kp  N6      &kp  BSPC  
+ &none      &kp F5     &kp F6      &kp F7       &kp F8                                                                      &none         &kp  N4       &kp  N5     &kp  N6      &kp  BSPC  
  &none      &kp F9     &kp F10     &kp F11      &kp F12                                                                     &kp  N0       &kp  N1       &kp  N2     &kp  N3      &kp KP_DOT
-                                           &trans        &trans                                                                         &trans        &trans        
+                                           &none             &none                    &none       &none        
                   >;
 	          };
 
@@ -96,108 +102,30 @@
  */
                         bindings = <  
  &kp LS(TAB)    &kp LC(X)     &kp LC(C)     &kp LC(V)      &kp LC(FSLH)                   &none      &none     &none       &none      &kp  KP_NUMLOCK            
- &kp LC(A)      &kp LC(S)      &kp LA(A)        &kp LC(F)    &kp LA(S)                    &none      &none     &none       &none        &none  
+ &kp LC(A)      &kp LC(S)      &kp LA(A)        &kp LC(F)    &kp LA(S)                    &none      &none     &none       &none      &none  
  &kp LC(Z)      &kp LC(Y)       &none      &none           &kp LG(L)                      &none      &none     &none       &none      &none
-                                                       &none             &none                    &none       &none                  
+                                                       &none             &none                    &none       &mo BT                  
+                    >;
+	            };
+
+     bt_layer {
+/* bt
+ * ------------------------------------------------------------------------------------------------------------------------------
+ * |  BT0  |  BT1  |  BT2  |  BT3  |  BT4  |-----------------------------------| F1  |  F2  |  F3  |  F4  |  F5  | 
+ * |       |       |       |       |       |-----------------------------------| F6  |  F7  |  F8  |  F9  |  F10 | 
+ * |  boot | RESET |BT_CLR |       |  OUT  | ----------------------------------| F11 |  F12 |      | RESET|  boot| 
+ * ----------------        |  TO 1 |  TO 0 | ----------------------------------| TO 2|      |-----------------------
+ */
+                        bindings = <  
+ &bt  BT_SEL 0    &bt  BT_SEL 1     &bt  BT_SEL 2     &bt  BT_SEL 3      &bt  BT_SEL 4                   &none      &none     &none       &none      &none  
+ &none            &none             &none             &none              &none                          &none      &none     &none       &none      &none  
+ &bootloader      &sys_reset        &bt BT_CLR        &none              &out OUT_TOG                    &none      &none     &none         &sys_reset    &bootloader
+                                                      &none      &none     &none       &none                  
                     >;
 	            };
 
                 
         };
 
-    behaviors {
-        guibspc: gui_bspc {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp RGUI>, <&kp BSPC>;
-            mods = <(MOD_RSFT)>;
-        };
-
-        altbspc: alt_bspc {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp RALT>, <&kp BSPC>;
-            mods = <(MOD_RSFT)>;
-        };
-
-        qtab: q_tab {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp Q>, <&kp TAB>;
-            mods = <(MOD_RSFT)>;
-        };
-
-        acaps: a_caps {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp A>, <&kp CAPS>;
-            mods = <(MOD_RSFT)>;
-        };
-
-        ddel: d_del {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp D>, <&kp DEL>;
-            mods = <(MOD_RSFT)>;
-        };
-
-        iins: i_ins {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp I>, <&kp INS>;
-            mods = <(MOD_RSFT)>;
-        };
-
-        mmute: m_mute {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp M>, <&kp C_MUTE>;
-            mods = <(MOD_RSFT)>;
-        };
-
-        uvup: u_vup {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp U>, <&kp C_VOL_UP>;
-            mods = <(MOD_RSFT)>;
-        };
-
-        jvdn: j_vdn {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp J>, <&kp C_VOL_DN>;
-            mods = <(MOD_RSFT)>;
-        };
-
-        hhome: h_home {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp H>, <&kp HOME>;
-            mods = <(MOD_RSFT)>;
-        };
-
-        leftup: left_up {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT>, <&kp UP>;
-            mods = <(MOD_RSFT)>;
-        };
-
-        eesc: e_esc {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp E>, <&kp ESC>;
-            mods = <(MOD_RSFT)>;
-        };
-
-        rightdown: right_down {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp RIGHT>, <&kp DOWN>;
-            mods = <(MOD_RSFT)>;
-        };
-  
-
-  };
 
 };
