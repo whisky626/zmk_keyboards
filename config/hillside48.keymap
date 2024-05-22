@@ -63,10 +63,10 @@
  * ------------------------|  CTRL | SPACE | ----------------------------------|  WIN  |  MO 3 |-----------------------
  */
                         bindings = <
- &kp  KP_N7        &kp  KP_N8        &kp  KP_N9       &kp  K_UNDO        &kp  DEL          &none        &none        &none         &none         &kp  BSPC       
- &kp  KP_N4        &kp  KP_N5        &kp  KP_N6       &kp  K_COPY        &kp  K_PASTE      &none        &none        &none         &none         &kp  ENTER   
- &kp  KP_N1        &kp  KP_N2        &kp  KP_N3       &kp  KP_DOT        &kp  KP_N0        &none        &none        &leftup       &rightdown    &kp  RSHFT 
-                                                      &kp LCTRL          &kp SPACE         &altbspc     &mo NUM   
+ &kp  KP_N7        &kp  KP_N8        &kp  KP_N9       &kp  LC(Z)        &kp  DEL          &none        &none        &none         &none         &kp  BSPC       
+ &kp  KP_N4        &kp  KP_N5        &kp  KP_N6       &kp  LC(C)        &kp  LC(V)        &none        &none        &none         &none         &kp  ENTER   
+ &kp  KP_N1        &kp  KP_N2        &kp  KP_N3       &kp  KP_DOT       &kp  KP_N0        &none        &none        &leftup       &rightdown    &kp  RSHFT 
+                                                      &kp LCTRL         &kp SPACE         &altbspc     &mo NUM   
                   >;
 		  };
 
