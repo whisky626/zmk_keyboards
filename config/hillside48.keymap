@@ -20,20 +20,20 @@
 
         default_layer {
             bindings = <
-&kp ESC       &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0    &kp MINUS &kp EQUAL &kp BSPC
+&kp ESC    &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0    &kp MINUS &kp EQUAL &kp BSPC
 &kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I     &kp O    &kp P     &kp LBKT  &kp RBKT  &kp BSLH
-&kp CAPS   &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K     &kp L    &kp SEMI  &kp SQT   &kp ENTER
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA &kp DOT  &kp SLASH &kp RSHFT &kp C_MUTE
-&kp LCTRL  &kp LALT                    &kp SPACE                      &kp RGUI &mo FN
+&mt LALT CAPS   &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K     &kp L    &kp SEMI  &kp SQT   &kp ENTER
+&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA &kp DOT  &kp SLASH &mo FN &kp C_MUTE
+&kp RGUI  &kp LCTRL                    &kp SPACE                      &kp DEL &kp RSHFT
             >;
 sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
         };
 
 fn_layer {
             bindings = <
-&kp GRAVE     &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7   &kp F8        &kp F9    &kp F10 &kp F11 &kp F12 &kp DEL
-&trans &kp PSCRN &kp SLCK &kp PAUSE_BREAK &trans &trans &trans &trans &trans   &out OUT_TOG &trans    &trans  &trans  &trans 
-&trans &kp INS &kp HOME &kp PG_UP &trans &trans &trans &trans &trans   &trans  &trans    &trans  &trans
+&kp GRAVE     &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7   &kp F8        &kp F9    &kp F10   &kp F11 &kp F12 &kp DEL
+&trans &kp PSCRN &kp SLCK &kp PAUSE_BREAK &trans &trans &trans &trans &trans   &trans    &trans    &trans  &trans  &trans 
+&trans &kp INS &kp HOME &kp PG_UP &trans &trans &trans &trans &trans   &trans  &trans    &trans    &trans
 &trans &kp DEL &kp END &kp PG_DN &trans &to BT &trans &trans &trans &trans     &trans &kp UP  &kp C_SLEEP
 &trans &trans               &trans                      &kp DOWN   &trans
             >;
@@ -43,9 +43,9 @@ sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         bt_layer {
             bindings =<
 &to DEFAULT &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none &none &none &none &none &none &none &none
-&none &none &none &none &sys_reset &none &none &none &none &none &none &none &none &none
+&none &none &none &none &sys_reset &none &none &none &none &out OUT_TOG &none &none &none &none
 &none &none &none &none &none &none &none &none &none &none &none &none &none
-&none &none &none &bt BT_CLR &none &bootloader &none &none &none &none &none &none &none
+&none &none &none &bt BT_CLR BT_CLR_ALL	 &none &none &none &none &none &none &none &bootloader
 &none &none             &none                   &none &none
 >;
 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
