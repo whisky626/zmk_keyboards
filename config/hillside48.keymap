@@ -59,16 +59,16 @@
                 pad_layer {
 /* PAD
  * ------------------------------------------------------------------------------------------------------------------------------
- * |   TAB   |      |  LGUI   |  LALT |   ESC |-----------------------------------|  PGUP  |  HOME   | UP   |  END  |  DEL | 
- * |   MO 3   |      |      |  LSHIFT | ENTER |-----------------------------------|   PGDN |   LEFT  | DOWN |  RIGHT| BSPC | 
- * |   TAB   |      |      |      |      | ----------------------------------     |        |          |     |     | ENTER | 
- * ------------------------|      |     | ----------------------------------|     |      |-----------------------
+ * |   TAB   |      | LGUI |  LALT  |   ESC |-----------------------------------|  PGUP  |  HOME  | UP   |  END  |  DEL | 
+ * |   MO 3  |      |      | LSHIFT | ENTER |-----------------------------------|  PGDN  |  LEFT  | DOWN | RIGHT | BSPC | 
+ * |   TAB   |      |      |        |       | --------------------------------- |        |        |      |       | ENTER| 
+ * ------------------------|        |       | ----------------------------------|        |        |-----------------------
  */
                         bindings = <
  &kp  TAB        &none        &kp  LGUI        &kp  LALT        &kp  ESC            &kp  PG_UP        &kp  HOME        &kp  UP        &kp  END        &kp  DEL       
  &mo 3           &none        &none            &kp  LSHIFT      &kp  ENTER          &kp  PG_DN        &kp  LEFT        &kp  DOWN      &kp  RIGHT      &kp  BSPC   
  &kp  TAB        &none        &none            &none            &none               &none             &kp  LC(LEFT)    &none          &kp  LC(RIGHT)  &kp  ENTER 
-                                               &none            &none               &none     &none   
+                                               &none            &none               &none             &none   
                   >;
 		  };
 
@@ -76,47 +76,47 @@
 /* NUM
  * ------------------------------------------------------------------------------------------------------------------------------
  * |       |   F1   |   F2   |   F3   |   F4   |-----------------------------------|       |   7   |   8   |   9   |   DEL   | 
- * |       |   F5   |   F6   |   F7   |   F8   |-----------------------------------|       |   4  |    5  |     6 |  BSPC | 
- * |       |   F9   |   F10  |   F11  |   F12  | ----------------------------------|    0   |   1    |   2  |   3   |  .   | 
+ * |       |   F5   |   F6   |   F7   |   F8   |-----------------------------------|       |   4   |   5   |   6   |   BSPC  | 
+ * |       |   F9   |   F10  |   F11  |   F12  | ----------------------------------|   0   |   1   |   2   |   3   |    .    | 
  * ----------------          |        |        | ----------------------------------|       |       |-----------------------
  */
                         bindings = <
- &none      &kp F1     &kp F2      &kp F3       &kp F4                                                                      &kp LS(N5)    &kp  N7       &kp  N8     &kp  N9      &kp DEL       
- &none      &kp F5     &kp F6      &kp F7       &kp F8                                                                      &none         &kp  N4       &kp  N5     &kp  N6      &kp  BSPC  
- &none      &kp F9     &kp F10     &kp F11      &kp F12                                                                     &kp  N0       &kp  N1       &kp  N2     &kp  N3      &kp KP_DOT
-                                           &none             &none                    &none       &none        
+ &none      &kp F1     &kp F2      &kp F3       &kp F4                                &kp LS(N5)    &kp  N7       &kp  N8     &kp  N9      &kp DEL       
+ &none      &kp F5     &kp F6      &kp F7       &kp F8                                &none         &kp  N4       &kp  N5     &kp  N6      &kp  BSPC  
+ &none      &kp F9     &kp F10     &kp F11      &kp F12                               &kp  N0       &kp  N1       &kp  N2     &kp  N3      &kp KP_DOT
+                                   &none        &none                                 &none         &none        
                   >;
 	          };
 
                  adj_layer {
 /* ADJ
  * ------------------------------------------------------------------------------------------------------------------------------
- * |  BT0  |  BT1  |  BT2  |  BT3  |  BT4  |-----------------------------------| F1  |  F2  |  F3  |  F4  |  F5  | 
- * |       |       |       |       |       |-----------------------------------| F6  |  F7  |  F8  |  F9  |  F10 | 
- * |  boot | RESET |BT_CLR |       |  OUT  | ----------------------------------| F11 |  F12 |      | RESET|  boot| 
- * ----------------        |  TO 1 |  TO 0 | ----------------------------------| TO 2|      |-----------------------
+ * |LS(TAB) |  LC(X)  |  LC(C) |  LC(V) |  LC(FSLH) |-----------------------------------|     |     |      |      | NUMLOCK | 
+ * |  LC(A) |  LC(S)  |  LA(A) |  LC(F) |  LA(S)    |-----------------------------------|     |     |      |      |         | 
+ * |  LC(Z) |  LC(Y)  |        |        |  LG(L)    | ----------------------------------|     |     |      |      |         | 
+ * ----------------            |        |           | ----------------------------------|     |     |-----------------------
  */
                         bindings = <  
- &kp LS(TAB)    &kp LC(X)     &kp LC(C)     &kp LC(V)      &kp LC(FSLH)                   &none      &none     &none       &none      &kp  KP_NUMLOCK            
- &kp LC(A)      &kp LC(S)      &kp LA(A)        &kp LC(F)    &kp LA(S)                    &none      &none     &none       &none      &none  
- &kp LC(Z)      &kp LC(Y)       &none      &none           &kp LG(L)                      &none      &none     &none       &none      &none
-                                                       &none             &none                    &none       &to BT                  
+ &kp LS(TAB)    &kp LC(X)     &kp LC(C)     &kp LC(V)    &kp LC(FSLH)                 &none      &none     &none       &none      &kp  KP_NUMLOCK            
+ &kp LC(A)      &kp LC(S)     &kp LA(A)     &kp LC(F)    &kp LA(S)                    &none      &none     &none       &none      &none  
+ &kp LC(Z)      &kp LC(Y)     &none         &none        &kp LG(L)                    &none      &none     &none       &none      &none
+                                            &none        &none                        &none      &to BT                  
                     >;
 	            };
 
      bt_layer {
 /* bt
  * ------------------------------------------------------------------------------------------------------------------------------
- * |  BT0  |  BT1  |  BT2  |  BT3  |  BT4  |-----------------------------------| F1  |  F2  |  F3  |  F4  |  F5  | 
- * |       |       |       |       |       |-----------------------------------| F6  |  F7  |  F8  |  F9  |  F10 | 
- * |  boot | RESET |BT_CLR |       |  OUT  | ----------------------------------| F11 |  F12 |      | RESET|  boot| 
- * ----------------        |  TO 1 |  TO 0 | ----------------------------------| TO 0|      |-----------------------
+ * |  BT0  |  BT1  |  BT2  |  BT3  |  BT4  |-----------------------------------|     |      |      |      |      | 
+ * |       |       |       |       |       |-----------------------------------|     |      |      |      |      | 
+ * |  boot | RESET | BT_CLR|       |  OUT  | ----------------------------------|     |      |      | RESET|  boot| 
+ * ----------------        |       |       | ----------------------------------|     | TO 0 |-----------------------
  */
                         bindings = <  
- &bt  BT_SEL 0    &bt  BT_SEL 1     &bt  BT_SEL 2     &bt  BT_SEL 3      &bt  BT_SEL 4                   &none      &none     &none       &none      &none  
- &none            &none             &none             &none              &none                          &none      &none     &none       &none      &none  
- &bootloader      &sys_reset        &bt BT_CLR        &none              &out OUT_TOG                    &none      &none     &none         &sys_reset    &bootloader
-                                                      &none      &none     &none       &to DEFAULT                  
+ &bt  BT_SEL 0    &bt  BT_SEL 1     &bt  BT_SEL 2     &bt  BT_SEL 3      &bt  BT_SEL 4            &none      &none     &none       &none        &none  
+ &none            &none             &none             &none              &none                    &none      &none     &none       &none        &none  
+ &bootloader      &sys_reset        &bt BT_CLR        &none              &out OUT_TOG             &none      &none     &none       &sys_reset   &bootloader
+                                    &none             &none              &none                    &to DEFAULT                  
                     >;
 	            };
 
