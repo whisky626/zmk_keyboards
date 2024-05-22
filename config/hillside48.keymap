@@ -39,8 +39,8 @@ fn_layer {
 &kp GRAVE     &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7   &kp F8        &kp F9    &kp F10   &kp F11 &kp F12 &kp DEL
 &trans &kp PSCRN &kp SLCK &kp PAUSE_BREAK &trans &trans &trans &trans &trans   &trans    &trans    &trans  &trans  &trans 
 &trans &kp INS &kp HOME &kp PG_UP &trans &trans &trans &trans &trans   &trans  &trans    &trans    &trans
-&trans &kp DEL &kp END &kp PG_DN &trans &to BT &trans &trans &trans &trans     &trans &kp UP  &kp C_SLEEP
-&trans &trans               &trans                      &kp DOWN   &trans
+&trans &kp DEL &kp END &kp PG_DN &trans &to BT &trans &trans &trans &trans     &trans &trans  &kp C_SLEEP
+&trans &trans               &trans                      &trans   &trans
             >;
 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
