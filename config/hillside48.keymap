@@ -40,24 +40,24 @@
 		  };
 
                  mac_layer {
-/* MAC
+/* 1
  * ------------------------------------------------------------------------------------------------------------------------------
- * | Q/TAB |   W   | E/ESC |   R   |   T   |-----------------------------------|   Y   | U/VUP | I/INS |   O   |   P   | 
- * | A/CAPS|   S   | D/DEL |   F   |   G   |-----------------------------------| H/HOME| J/VDN |   K   |   L   | ENTER | 
- * |   Z   |   X   |   C   |   V   |   B   | ----------------------------------|   N   | M/MUTE| LT/UP | RT/DN | SHIFT | 
- * ------------------------|command| SPACE | ----------------------------------|  WIN  |  MO 3 |-----------------------
+ * |   {   |   }   |   [   |   ]   |   #   |-----------------------------------|   %   |   +   |   -   |   *   |   /   | 
+ * |   (   |   )   |   ^   |   _   |   <   |-----------------------------------|   >   |   =   |   ,   |   .   |   :   | 
+ * |   '   |   "   |   |   |   \   |   !   | ----------------------------------|   @   |   $   |   &   |   ;   |   ?   | 
+ * ------------------------|       |       | ----------------------------------|       |       |-----------------------
  */
                         bindings = <
- &kp LS(LBKT)   &kp LS(RBKT)     &kp LBKT         &kp  RBKT         &kp LS(N3)                    &kp LS(N5)        &kp KP_PLUS       &kp KP_MINUS     &kp  KP_MULTIPLY   &kp  KP_DIVIDE       
- &kp LS(N9)     &kp LS(N0)        &kp LS(N6)       &kp LS(MINUS)     &kp LS(COMMA)                &kp LS(DOT)       &kp EQUAL         &kp  COMMA       &kp  DOT           &kp LS(SEMI) 
- &kp SQT        &kp LS(SQT)        &kp LS(BSLH)         &kp BSLH        &kp LS(N1)                &kp LS(N2)        &kp LS(N4)        &kp LS(N7)       &kp SEMI           &kp LS(FSLH) 
-                                          &none             &none                    &none       &none   
+ &kp LS(LBKT)   &kp LS(RBKT)     &kp LBKT         &kp  RBKT       &kp LS(N3)                &kp LS(N5)        &kp KP_PLUS       &kp KP_MINUS     &kp  KP_MULTIPLY   &kp  KP_DIVIDE       
+ &kp LS(N9)     &kp LS(N0)       &kp LS(N6)       &kp LS(MINUS)   &kp LS(COMMA)             &kp LS(DOT)       &kp EQUAL         &kp  COMMA       &kp  DOT           &kp LS(SEMI) 
+ &kp SQT        &kp LS(SQT)      &kp LS(BSLH)     &kp BSLH        &kp LS(N1)                &kp LS(N2)        &kp LS(N4)        &kp LS(N7)       &kp SEMI           &kp LS(FSLH) 
+                                                  &none           &none                     &none             &none   
                   >;
 		  };
 
 
                 pad_layer {
-/* PAD
+/* 2
  * ------------------------------------------------------------------------------------------------------------------------------
  * |   TAB   |      | LGUI |  LALT  |   ESC |-----------------------------------|  PGUP  |  HOME  | UP   |  END  |  DEL | 
  * |   MO 3  |      |      | LSHIFT | ENTER |-----------------------------------|  PGDN  |  LEFT  | DOWN | RIGHT | BSPC | 
@@ -73,7 +73,7 @@
 		  };
 
                  num_layer {
-/* NUM
+/* 3
  * ------------------------------------------------------------------------------------------------------------------------------
  * |       |   F1   |   F2   |   F3   |   F4   |-----------------------------------|       |   7   |   8   |   9   |   DEL   | 
  * |       |   F5   |   F6   |   F7   |   F8   |-----------------------------------|       |   4   |   5   |   6   |   BSPC  | 
@@ -89,7 +89,7 @@
 	          };
 
                  adj_layer {
-/* ADJ
+/* 4
  * ------------------------------------------------------------------------------------------------------------------------------
  * |LS(TAB) |  LC(X)  |  LC(C) |  LC(V) |  LC(FSLH) |-----------------------------------|     |     |      |      | NUMLOCK | 
  * |  LC(A) |  LC(S)  |  LA(A) |  LC(F) |  LA(S)    |-----------------------------------|     |     |      |      |         | 
