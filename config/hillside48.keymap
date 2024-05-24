@@ -24,66 +24,70 @@
                 default_layer {
 /* QWERTY
  * ------------------------------------------------------------------------------------------------------------------------------
- * | Q/TAB |   W   | E/ESC |   R   |   T   |-----------------------------------|   Y   | U/VUP | I/INS |   O   |   P   | 
- * | A/CAPS|   S   | D/DEL |   F   |   G   |-----------------------------------| H/HOME| J/VDN |   K   |   L   | ENTER | 
- * |   Z   |   X   |   C   |   V   |   B   | ----------------------------------|   N   | M/MUTE| LT/UP | RT/DN | SHIFT | 
- * ------------------------|  CTRL | SPACE | ----------------------------------|  WIN  |  MO 3 |-----------------------
+ * | Q/TAB |   W   | E/ESC |   R   |   T   |-----------------------------------|   Y   | U/PGUP| I/INS |   O   |   P   | 
+ * | A/CAPS|   S   | D/DEL |   F   |   G   |-----------------------------------| H/HOME| J/PGDN|   K   |   L   | ENTER | 
+ * |   Z   |   X   |   C   |   V   |   B   | ----------------------------------|   N   |   M   |  ALT  |  WIN  | SHIFT | 
+ * ------------------------|  CTRL | SPACE | ----------------------------------|  BSPC |  MO 3 |  mute |----------------
  */
                         bindings = <
- &qtab         &kp  W        &eesc         &kp  R        &kp  T                          &kp  Y        &uvup         &iins         &kp  O        &kp  P       
- &acaps        &kp  S        &ddel         &kp  F        &kp  G                          &hhome        &jvdn         &kp  K        &kp  L        &kp  ENTER   
- &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &kp  N        &mmute        &leftup       &rightdown    &kp  RSHFT 
-                                           &kp LCTRL     &kp SPACE                       &guibspc      &mo NUM   
+ &qtab         &kp  W        &eesc         &kp  R        &kp  T                          &kp  Y        &upgup        &iins         &kp  O        &kp  P       
+ &acaps        &kp  S        &ddel         &kp  F        &kp  G                          &hhome        &jpgdn        &kp  K        &kp  L        &kp  ENTER   
+ &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &kp  N        &kp  M        &kp  RALT     &kp  RGUI     &kp  RSHFT 
+                                           &kp LCTRL     &kp SPACE                       &kp BSPC      &mo NUM       &kp C_MUTE
                   >;
+sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
 		  };
 
                  mac_layer {
 /* MAC
  * ------------------------------------------------------------------------------------------------------------------------------
- * | Q/TAB |   W   | E/ESC |   R   |   T   |-----------------------------------|   Y   | U/VUP | I/INS |   O   |   P   | 
- * | A/CAPS|   S   | D/DEL |   F   |   G   |-----------------------------------| H/HOME| J/VDN |   K   |   L   | ENTER | 
- * |   Z   |   X   |   C   |   V   |   B   | ----------------------------------|   N   | M/MUTE| LT/UP | RT/DN | SHIFT | 
- * ------------------------|command| SPACE | ----------------------------------|  WIN  |  MO 3 |-----------------------
+ * | Q/TAB |   W   | E/ESC |   R   |   T   |-----------------------------------|   Y   | U/PGUP| I/INS |   O   |   P   | 
+ * | A/CAPS|   S   | D/DEL |   F   |   G   |-----------------------------------| H/HOME| J/PGDN|   K   |   L   | ENTER | 
+ * |   Z   |   X   |   C   |   V   |   B   | ----------------------------------|   N   |   M   |  ALT  |  WIN  | SHIFT | 
+ * ------------------------|command| SPACE | ----------------------------------|  WIN  |  MO 3 |  mute |---------------
  */
                         bindings = <
- &qtab         &kp  W        &eesc         &kp  R        &kp  T                          &kp  Y        &uvup         &iins         &kp  O        &kp  P       
- &acaps        &kp  S        &ddel         &kp  F        &kp  G                          &hhome        &jvdn         &kp  K        &kp  L        &kp  ENTER   
- &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &kp  N        &mmute        &leftup       &rightdown    &kp  RSHFT 
-                                           &kp LCMD      &kp SPACE                       &guibspc      &mo NUM   
+ &qtab         &kp  W        &eesc         &kp  R        &kp  T                          &kp  Y        &upgup        &iins         &kp  O        &kp  P       
+ &acaps        &kp  S        &ddel         &kp  F        &kp  G                          &hhome        &jpgdn        &kp  K        &kp  L        &kp  ENTER   
+ &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &kp  N        &kp  M        &kp  RALT     &kp  RGUI     &kp  RSHFT 
+                                           &kp LCMD      &kp SPACE                       &kp BSPC      &mo NUM       &kp C_MUTE
                   >;
+sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
 		  };
 
 
                 pad_layer {
 /* PAD
  * ------------------------------------------------------------------------------------------------------------------------------
- * |   7   |   8   |   9   |  UNDO |   DEL |-----------------------------------|       |       |       |       |  BSPC | 
- * |   4   |   5   |   6   |  COPY | PASTE |-----------------------------------|       |       |       |       | ENTER | 
- * |   1   |   2   |   3   |   .   |   0   | ----------------------------------|       |       | LT/UP | RT/DN | SHIFT | 
- * ------------------------|  CTRL | SPACE | ----------------------------------|  WIN  |  MO 3 |-----------------------
+ * |   7   |   8   |   9   |  UNDO |  ESC  |-----------------------------------|       | PG_UP |  INS  |       |  DEL  | 
+ * |   4   |   5   |   6   |  COPY | PASTE |-----------------------------------|  HOME | PG_DN |       |       | ENTER | 
+ * |   1   |   2   |   3   |   .   |   0   | ----------------------------------|       |       |  ALT  |  WIN  | SHIFT | 
+ * ------------------------|  CTRL | SPACE | ----------------------------------|  BSPC |  MO 3 |  mute |---------------
  */
                         bindings = <
- &kp  KP_N7        &kp  KP_N8        &kp  KP_N9       &kp  LC(Z)        &kp  DEL          &none        &none        &none         &none         &kp  BSPC       
- &kp  KP_N4        &kp  KP_N5        &kp  KP_N6       &kp  LC(C)        &kp  LC(V)        &none        &none        &none         &none         &kp  ENTER   
- &kp  KP_N1        &kp  KP_N2        &kp  KP_N3       &kp  KP_DOT       &kp  KP_N0        &none        &none        &leftup       &rightdown    &kp  RSHFT 
-                                                      &kp LCTRL         &kp SPACE         &altbspc     &mo NUM   
+ &kp  KP_N7        &kp  KP_N8        &kp  KP_N9       &kp  LC(Z)        &kp  ESC          &none       &kp  PG_UP  &kp  INS      &none        &kp  DEL       
+ &kp  KP_N4        &kp  KP_N5        &kp  KP_N6       &kp  LC(C)        &kp  LC(V)        &kp  HOME   &kp  PG_DN  &none         &none        &kp  ENTER   
+ &kp  KP_N1        &kp  KP_N2        &kp  KP_N3       &kp  KP_DOT       &kp  KP_N0        &none       &none       &kp  RALT     &kp  RGUI    &kp  RSHFT 
+                                                      &kp  LCTRL        &kp SPACE         &kp BSPC    &mo NUM     &kp C_MUTE
                   >;
+sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
 		  };
 
                  num_layer {
 /* NUM
  * ------------------------------------------------------------------------------------------------------------------------------
  * |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |   0   | 
- * |       |   `   |   [   |   ]   |   \   |-----------------------------------|       |       |       |       |       | 
- * |   ;   |   '   |   ,   |   .   |   /   | ----------------------------------|       |       |   -   |   =   |       | 
- * ----------------        |  CTRL |  TO 4 | ----------------------------------|       |       |-----------------------
+ * |   -   |   =   |   [   |   ]   |   \   |-----------------------------------|   `   |       |       |       |       | 
+ * |   ;   |   '   |   ,   |   .   |   /   | ----------------------------------|       |       |       |       |       | 
+ * ----------------        |  CTRL |  TO 4 | ----------------------------------|       |       |  mute |---------------
  */
                         bindings = <
  &kp  N1       &kp  N2       &kp  N3       &kp  N4       &kp  N5                                                                        &kp  N6       &kp  N7       &kp  N8       &kp  N9       &kp N0       
- &trans        &kp  GRAVE    &kp LBKT      &kp RBKT      &kp BSLH                                                                       &trans        &trans        &trans        &trans        &trans 
- &kp SEMI      &kp SQT       &kp COMMA     &kp DOT       &kp SLASH                                                                      &trans        &trans        &kp MINUS     &kp EQUAL     &trans 
-                                           &trans        &to ADJ                                                                        &trans        &trans        
+ &kp MINUS     &kp EQUAL     &kp LBKT      &kp RBKT      &kp BSLH                                                                       &kp  GRAVE    &trans        &trans        &trans        &trans 
+ &kp SEMI      &kp SQT       &kp COMMA     &kp DOT       &kp SLASH                                                                      &trans        &trans        &trans        &trans        &trans 
+                                           &trans        &to ADJ                                                                        &trans        &trans        &kp C_MUTE
                   >;
+sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 	          };
 
                  adj_layer {
@@ -92,34 +96,22 @@
  * |  BT0  |  BT1  |  BT2  |  BT3  |  BT4  |-----------------------------------| F1  |  F2  |  F3  |  F4  |  F5  | 
  * |       |       |       |       |       |-----------------------------------| F6  |  F7  |  F8  |  F9  |  F10 | 
  * |  boot | RESET |BT_CLR |       |  OUT  | ----------------------------------| F11 |  F12 |      | RESET|  boot| 
- * ----------------        |  TO 1 |  TO 0 | ----------------------------------| TO 2|      |-----------------------
+ * ----------------        |  TO 1 |  TO 0 | ----------------------------------| TO 2|      | mute |-----------------
  */
                         bindings = <  
  &bt  BT_SEL 0    &bt  BT_SEL 1     &bt  BT_SEL 2     &bt  BT_SEL 3      &bt  BT_SEL 4                   &kp  F1       &kp  F2       &kp  F3       &kp  F4       &kp  F5            
  &none            &none             &none             &none              &none                           &kp  F6       &kp  F7       &kp  F8       &kp  F9       &kp  F10  
  &bootloader      &sys_reset        &bt BT_CLR        &none              &out OUT_TOG                    &kp  F11      &kp  F12      &none         &sys_reset    &bootloader
-                                                      &to MAC            &to DEFAULT                     &to PAD       &none                  
+                                                      &to MAC            &to DEFAULT                     &to PAD       &none         &kp C_MUTE         
                     >;
+sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
 	            };
 
                 
         };
 
     behaviors {
-        guibspc: gui_bspc {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp RGUI>, <&kp BSPC>;
-            mods = <(MOD_RSFT)>;
-        };
-
-        altbspc: alt_bspc {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp RALT>, <&kp BSPC>;
-            mods = <(MOD_RSFT)>;
-        };
-
+     
         qtab: q_tab {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -148,24 +140,17 @@
             mods = <(MOD_RSFT)>;
         };
 
-        mmute: m_mute {
+        upgup: u_pgup {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp M>, <&kp C_MUTE>;
+            bindings = <&kp U>, <&kp PG_UP>;
             mods = <(MOD_RSFT)>;
         };
 
-        uvup: u_vup {
+        jpgdn: j_pgdn {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp U>, <&kp C_VOL_UP>;
-            mods = <(MOD_RSFT)>;
-        };
-
-        jvdn: j_vdn {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp J>, <&kp C_VOL_DN>;
+            bindings = <&kp J>, <&kp PG_DN>;
             mods = <(MOD_RSFT)>;
         };
 
