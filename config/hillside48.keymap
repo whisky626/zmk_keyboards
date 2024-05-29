@@ -70,7 +70,7 @@ sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
  &kp  KP_N1        &kp  KP_N2        &kp  KP_N3       &kp  KP_DOT       &kp  KP_N0        &none       &none       &kp  RALT     &kp  RGUI    &kp  RSHFT 
                                                       &kp  LCTRL        &kp SPACE         &kp BSPC    &mo NUM     &kp C_MUTE
                   >;
-sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
+sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 		  };
 
                  num_layer {
