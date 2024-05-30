@@ -119,7 +119,7 @@ sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
             mods = <(MOD_RSFT)>;
         };
 
-        mdn: m_down {
+        mdn: m_dn {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp M>, <&kp DOWN>;
