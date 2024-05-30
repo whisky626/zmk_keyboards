@@ -27,13 +27,13 @@
  * | Q/TAB |   W   | E/ESC |   R   |   T   |-----------------------------------|   Y   | U/PGUP| I/INS |   O   |   P   | 
  * | A/CAPS|   S   | D/DEL |   F   |   G   |-----------------------------------| H/HOME| J/PGDN|   K   |   L   | ENTER | 
  * |   Z   |   X   |   C   |   V   |   B   | ----------------------------------|   N   |   M   |  ALT  |  WIN  | SHIFT | 
- * ------------------------|  CTRL | SPACE | ----------------------------------|  BSPC |  MO 3 |  mute |----------------
+ * ------------------------|  CTRL | SPACE | ----------------------------------|  SPACE |  MO 3 |  mute |----------------
  */
                         bindings = <
  &qtab         &kp  W        &eesc         &kp  R        &kp  T                          &kp  Y        &upgup        &iins         &kp  O        &kp  P       
  &acaps        &kp  S        &ddel         &kp  F        &kp  G                          &hhome        &jpgdn        &kp  K        &kp  L        &kp  ENTER   
  &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &kp  N        &kp  M        &kp  RALT     &kp  RGUI     &kp  RSHFT 
-                                           &kp LCTRL     &kp SPACE                       &kp BSPC      &mo NUM       &kp C_MUTE
+                                           &kp LCTRL     &kp SPACE                       &kp SPACE      &mo NUM       &kp C_MUTE
                   >;
 sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
 		  };
@@ -44,13 +44,13 @@ sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
  * | Q/TAB |   W   | E/ESC |   R   |   T   |-----------------------------------|   Y   | U/PGUP| I/INS |   O   |   P   | 
  * | A/CAPS|   S   | D/DEL |   F   |   G   |-----------------------------------| H/HOME| J/PGDN|   K   |   L   | ENTER | 
  * |   Z   |   X   |   C   |   V   |   B   | ----------------------------------|   N   |   M   |  ALT  |  WIN  | SHIFT | 
- * ------------------------|command| SPACE | ----------------------------------|  WIN  |  MO 3 |  mute |---------------
+ * ------------------------|command| SPACE | ----------------------------------|  SPACE  |  MO 3 |  mute |---------------
  */
                         bindings = <
  &qtab         &kp  W        &eesc         &kp  R        &kp  T                          &kp  Y        &upgup        &iins         &kp  O        &kp  P       
  &acaps        &kp  S        &ddel         &kp  F        &kp  G                          &hhome        &jpgdn        &kp  K        &kp  L        &kp  ENTER   
  &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &kp  N        &kp  M        &kp  RALT     &kp  RGUI     &kp  RSHFT 
-                                           &kp LCMD      &kp SPACE                       &kp BSPC      &mo NUM       &kp C_MUTE
+                                           &kp LCMD      &kp SPACE                       &kp SPACE      &mo NUM       &kp C_MUTE
                   >;
 sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
 		  };
@@ -62,13 +62,13 @@ sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
  * |   7   |   8   |   9   |  UNDO |  ESC  |-----------------------------------|       | PG_UP |  INS  |       |  DEL  | 
  * |   4   |   5   |   6   |  COPY | PASTE |-----------------------------------|  HOME | PG_DN |       |  lock | ENTER | 
  * |   1   |   2   |   3   |   .   |   0   | ----------------------------------|       |       |  ALT  |  WIN  | SHIFT | 
- * ------------------------|  CTRL | SPACE | ----------------------------------|  BSPC |  MO 3 |  mute |---------------
+ * ------------------------|  CTRL | SPACE | ----------------------------------|  SPACE |  MO 3 |  mute |---------------
  */
                         bindings = <
  &kp  KP_N7        &kp  KP_N8        &kp  KP_N9       &kp  LC(Z)        &kp  ESC          &none       &kp  PG_UP  &kp  INS      &none                 &kp  DEL       
  &kp  KP_N4        &kp  KP_N5        &kp  KP_N6       &kp  LC(C)        &kp  LC(V)        &kp  HOME   &kp  PG_DN  &none         &kp KP_NUMLOCK        &kp  ENTER   
  &kp  KP_N1        &kp  KP_N2        &kp  KP_N3       &kp  KP_DOT       &kp  KP_N0        &none       &none       &kp  RALT     &kp  RGUI             &kp  RSHFT 
-                                                      &kp  LCTRL        &kp SPACE         &kp BSPC    &mo NUM     &kp C_MUTE
+                                                      &kp  LCTRL        &kp SPACE         &kp SPACE    &mo NUM     &kp C_MUTE
                   >;
 sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 		  };
@@ -79,7 +79,7 @@ sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
  * |   1   |   2   |   3   |   4   |   5   |-----------------------------------|   6   |   7   |   8   |   9   |   0   | 
  * |   -   |   =   |   [   |   ]   |   \   |-----------------------------------|   `   |       |       |       |       | 
  * |   ;   |   '   |   ,   |   .   |   /   | ----------------------------------|  up   |  down |       |       |       | 
- * ----------------        |  CTRL |  TO 4 | ----------------------------------|       |       |  mute |---------------
+ * ----------------        |  CTRL |  TO 4 | ----------------------------------|  SPACE  |       |  mute |---------------
  */
                         bindings = <
  &kp  N1       &kp  N2       &kp  N3       &kp  N4       &kp  N5                              &kp  N6       &kp  N7       &kp  N8       &kp  N9       &kp N0       
@@ -200,6 +200,12 @@ combos {
             bindings = <&kp CAPS>;
         };
 
+        combo_bspc {
+            timeout-ms = <50>;
+            key-positions = <8 9>;
+            bindings = <&kp BSPC>;
+        };
+
         combo_1 {
             timeout-ms = <50>;
             key-positions = <0 10>;
@@ -210,6 +216,54 @@ combos {
             timeout-ms = <50>;
             key-positions = <1 11>;
             bindings = <&kp N2>;
+        };
+
+combo_3 {
+            timeout-ms = <50>;
+            key-positions = <2 12>;
+            bindings = <&kp N3>;
+        };
+
+combo_4 {
+            timeout-ms = <50>;
+            key-positions = <3 13>;
+            bindings = <&kp N4>;
+        };
+
+combo_5 {
+            timeout-ms = <50>;
+            key-positions = <4 14>;
+            bindings = <&kp N5>;
+        };
+
+combo_6 {
+            timeout-ms = <50>;
+            key-positions = <5 15>;
+            bindings = <&kp N6>;
+        };
+
+combo_7 {
+            timeout-ms = <50>;
+            key-positions = <6 16>;
+            bindings = <&kp N7>;
+        };
+
+combo_8 {
+            timeout-ms = <50>;
+            key-positions = <7 17>;
+            bindings = <&kp N8>;
+        };
+
+combo_9 {
+            timeout-ms = <50>;
+            key-positions = <8 18>;
+            bindings = <&kp N9>;
+        };
+
+combo_0 {
+            timeout-ms = <50>;
+            key-positions = <9 19>;
+            bindings = <&kp N0>;
         };
    
     };
