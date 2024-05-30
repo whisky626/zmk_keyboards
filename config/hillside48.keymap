@@ -418,7 +418,7 @@ combo_divide {
 
 combo_power {
             timeout-ms = <50>;
-            key-positions = <2 9>;
+            key-positions = <1 9>;
             bindings = <&kp RS(N6)>;
         };
 
