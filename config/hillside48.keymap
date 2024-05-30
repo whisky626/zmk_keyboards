@@ -323,7 +323,7 @@ combo_dot {
 combo_slash {
             timeout-ms = <50>;
             key-positions = <25 26>;
-            bindings = <&kp SLASH>;
+            bindings = <&kp RS(SLASH)>;
         };
    
    
