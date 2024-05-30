@@ -187,29 +187,31 @@ sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
 
 combos {
         compatible = "zmk,combos";
+
         combo_tab {
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp TAB>;
         };
-    };
 
-combos {
-        compatible = "zmk,combos";
         combo_caps {
             timeout-ms = <50>;
             key-positions = <10 11>;
             bindings = <&kp CAPS>;
         };
-    };
 
-combos {
-        compatible = "zmk,combos";
-        combo_one {
+        combo_1 {
             timeout-ms = <50>;
             key-positions = <0 10>;
             bindings = <&kp N1>;
         };
+
+        combo_2 {
+            timeout-ms = <50>;
+            key-positions = <1 11>;
+            bindings = <&kp N2>;
+        };
+   
     };
 
 };
