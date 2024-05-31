@@ -17,10 +17,6 @@
 #define NUM    3
 #define ADJ    4
 
-&right_encoder {
-    resolution = <4>;
-};
-
 / {
         keymap {
                 compatible = "zmk,keymap";
