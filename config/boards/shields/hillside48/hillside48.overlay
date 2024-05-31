@@ -63,14 +63,14 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(3,6) RC(3,7) RC(3,8) RC(3,9) 
             label = "LEFT_ENCODER";
             a-gpios = <&gpio0 23 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
             b-gpios = <&gpio0 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-            resolution = <4>;
+            steps = <80>;
             status = "disabled";
         };
 
 sensors {
             compatible = "zmk,keymap-sensors";
             sensors = <&left_encoder>;
-triggers-per-rotation = <10>;
+triggers-per-rotation = <20>;
         };
 
 };
