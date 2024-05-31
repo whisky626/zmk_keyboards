@@ -110,6 +110,10 @@ sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
                 
         };
 
+&sensors {
+    triggers-per-rotation = <10>;
+};
+
     behaviors {
      
         nup: n_up {
