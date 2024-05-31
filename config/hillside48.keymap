@@ -17,6 +17,13 @@
 #define NUM    3
 #define ADJ    4
 
+&sensors {
+ 
+    right_config {
+        triggers-per-rotation = <10>;
+    };
+};
+
 / {
         keymap {
                 compatible = "zmk,keymap";
