@@ -33,7 +33,7 @@
  &kp  Q        &kp  W        &eesc         &kp  R        &kp  T                          &kp  Y        &upgup        &iins         &kp  O        &kp  P       
  &kp  A        &kp  S        &ddel         &kp  F        &kp  G                          &hhome        &jpgdn        &kp  K        &kp  L        &kp  ENTER   
  &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &nup          &mdown        &kp  RALT     &kp  RGUI     &kp  RSHFT 
-                                           &kp LCTRL     &kp SPACE                       &kp BSPC      &mo NUM       &soft_off
+                                           &kp LCTRL     &kp SPACE                       &kp BSPC      &mo NUM       &kp C_MUTE
                   >;
 sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
 		  };
@@ -50,7 +50,7 @@ sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
  &kp  Q        &kp  W        &eesc         &kp  R        &kp  T                          &kp  Y        &upgup        &iins         &kp  O        &kp  P       
  &kp  A        &kp  S        &ddel         &kp  F        &kp  G                          &hhome        &jpgdn        &kp  K        &kp  L        &kp  ENTER   
  &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &nup          &mdown        &kp  RALT     &kp  LCTRL    &kp  RSHFT 
-                                           &kp LCMD      &kp SPACE                       &kp BSPC      &mo NUM       &soft_off
+                                           &kp LCMD      &kp SPACE                       &kp BSPC      &mo NUM       &kp C_MUTE
                   >;
 sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
 		  };
