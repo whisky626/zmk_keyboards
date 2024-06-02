@@ -33,7 +33,7 @@
  &kp  Q        &kp  W        &eesc         &kp  R        &kp  T                          &kp  Y        &upgup        &iins         &kp  O        &kp  P       
  &kp  A        &kp  S        &ddel         &kp  F        &kp  G                          &hhome        &jpgdn        &kp  K        &kp  L        &kp  ENTER   
  &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &nup          &mdown        &kp  RALT     &kp  RGUI     &kp  RSHFT 
-                                           &kp LCTRL     &kp SPACE                       &kp BSPC      &mo NUM       &kp C_MUTE
+                                           &kp LCTRL     &kp SPACE                       &kp BSPC      &mo NUM       &soft_off
                   >;
 sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
 		  };
@@ -50,7 +50,7 @@ sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
  &kp  Q        &kp  W        &eesc         &kp  R        &kp  T                          &kp  Y        &upgup        &iins         &kp  O        &kp  P       
  &kp  A        &kp  S        &ddel         &kp  F        &kp  G                          &hhome        &jpgdn        &kp  K        &kp  L        &kp  ENTER   
  &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B                          &nup          &mdown        &kp  RALT     &kp  LCTRL    &kp  RSHFT 
-                                           &kp LCMD      &kp SPACE                       &kp BSPC      &mo NUM       &kp C_MUTE
+                                           &kp LCMD      &kp SPACE                       &kp BSPC      &mo NUM       &soft_off
                   >;
 sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
 		  };
@@ -93,13 +93,13 @@ sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
                  adj_layer {
 /* ADJ
  * ------------------------------------------------------------------------------------------------------------------------------
- * |  BT0  |  BT1  |  BT2  |  BT3  |  BT4  |-----------------------------------|       |       |       |  OUT  |  off  | 
+ * |  BT0  |  BT1  |  BT2  |  BT3  |  BT4  |-----------------------------------|       |       |       |  OUT  |       | 
  * |       |       |       |       |       |-----------------------------------|       |       |       |       |       | 
  * |  boot | RESET |BT_CLR |       |       | ----------------------------------|       |       |       | RESET |  boot | 
  * ----------------        |  TO 1 |  TO 0 | ----------------------------------| TO 2  |       |  mute |-----------------
  */
                         bindings = <  
- &bt  BT_SEL 0    &bt  BT_SEL 1     &bt  BT_SEL 2     &bt  BT_SEL 3      &bt  BT_SEL 4                   &none            &none             &none             &out OUT_TOG       &soft_off            
+ &bt  BT_SEL 0    &bt  BT_SEL 1     &bt  BT_SEL 2     &bt  BT_SEL 3      &bt  BT_SEL 4                   &none            &none             &none             &out OUT_TOG       &none            
  &none            &none             &none             &none              &none                           &none            &none             &none             &none              &none  
  &bootloader      &sys_reset        &bt BT_CLR        &none              &none                           &none            &none             &none             &sys_reset         &bootloader
                                                       &to MAC            &to DEFAULT                     &to PAD          &none             &kp C_MUTE         
