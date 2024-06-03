@@ -4,10 +4,17 @@
 if SHIELD_HILLSIDE48_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "e"
+    default "E L"
 
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
     default y
+
+endif
+
+if SHIELD_HILLSIDE48_RIGHT
+
+    config ZMK_KEYBOARD_NAME
+        default "E R"
 
 endif
 
