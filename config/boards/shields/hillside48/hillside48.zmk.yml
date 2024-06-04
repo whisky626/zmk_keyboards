@@ -4,10 +4,11 @@ name: Hillside48
 type: shield
 url: https://github.com/mmccoyd/hillside/
 requires: [pro_micro]
+exposes: [i2c_oled]
 features:
   - keys
   - encoder
-  - underglow
+  - display
 siblings:
   - hillside48_left
   - hillside48_right
