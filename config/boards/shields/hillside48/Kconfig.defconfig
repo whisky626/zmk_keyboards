@@ -4,6 +4,6 @@
 if SHIELD_HILLSIDE48
 
 config ZMK_KEYBOARD_NAME
-    default "STITCH 626"
+    default "TP 28"
 
 endif
