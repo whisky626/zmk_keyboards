@@ -9,16 +9,14 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/mouse_settings.h>
+
 #include "includes/mouse_keys.dtsi"
+#include "includes/mouse_tp.dtsi"
+#include "includes/mouse_tp_badjeff_input_listener.dtsi"
 
 #define DEFAULT 0
-#define MAC 1
-#define FC 2
-#define BT 3
-
-&mt {
-    tapping-term-ms = <400>;
-};
 
 / {
     keymap {
@@ -26,233 +24,14 @@
 
         default_layer {
             bindings = <
-&kp Q        &kp W        &kp E        &kp R       &kp T        &kp Y       &kp U       &kp I         &kp O         &kp P 
+&kp Q        &kp W        &kp E        &kp R       &kp T        &kp Y       &kp U       &kp I         &kp O         &bt BT_CLR 
 &kp A        &kp S        &kp D        &kp F       &kp G        &kp H       &kp J       &kp K         &kp L         &kp BSPC
-&kp Z        &kp X        &kp C        &kp V       &lt 2 SPACE  &kp B       &kp N       &kp M  
+&kp Z        &kp X        &kp C        &kp V       &kp SPACE    &kp B       &kp N       &kp M  
                                        &mkp LCLK   &mkp RCLK    &mkp MCLK
             >;
 
         };
 
-mac_layer {
-            bindings = <
-&kp Q        &kp W        &kp E        &kp R       &kp T        &kp Y       &kp U       &kp I         &kp O         &kp P 
-&kp A        &kp S        &kp D        &kp F       &kp G        &kp H       &kp J       &kp K         &kp L         &kp BSPC
-&kp Z        &kp X        &kp C        &kp V       &lt 2 SPACE  &kp B       &kp N       &kp M  
-                                       &mkp LCLK   &mkp RCLK    &mkp MCLK
-            >;
-
-        };
-
-fn_layer {
-            bindings = <
-&kp Q         &kp W         &kp E         &kp R       &kp T        &kp Y       &kp  UP     &kp I         &kp O         &kp P 
-&kp LC(SPACE) &kp LS(LG(S)) &kp D         &kp F       &kp G        &kp  LEFT   &kp  DOWN   &kp  RIGHT    &kp LG(L)     &kp DEL
-&kp LC(Z)     &kp X         &kp LC(C)     &kp LC(V)   &lt 2 SPACE  &mo BT      &kp N       &kp M  
-                                        &mkp LCLK   &mkp RCLK    &mkp MCLK
-            >;
-
-        };
-
-        bt_layer {
-            bindings =<
-&bt  BT_SEL 0  &bt  BT_SEL 1   &bt  BT_SEL 2   &bt  BT_SEL 3   &bt  BT_SEL 4   &none       &none       &out OUT_TOG  &none         &ext_power EP_TOG         
-&none          &none           &none           &none           &none           &none       &non        &none         &to MAC       &to DEFAULT        
-&bootloader    &sys_reset      &bt BT_CLR      &kp V           &lt 2 SPACE     &none       &non        &none  
-                                               &mkp LCLK       &mkp RCLK       &mkp MCLK
->;
-
-    };
-};
-
-combos {
-        compatible = "zmk,combos";
-
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp TAB>;
-        };
-
-        combo_caps {
-            timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp CAPS>;
-        };
-
-        combo_1 {
-            timeout-ms = <50>;
-            key-positions = <0 10>;
-            bindings = <&kp N1>;
-        };
-
-combo_2 {
-            timeout-ms = <50>;
-            key-positions = <1 11>;
-            bindings = <&kp N2>;
-        };
-
-combo_3 {
-            timeout-ms = <50>;
-            key-positions = <2 12>;
-            bindings = <&kp N3>;
-        };
-
-combo_4 {
-            timeout-ms = <50>;
-            key-positions = <3 13>;
-            bindings = <&kp N4>;
-        };
-
-combo_5 {
-            timeout-ms = <50>;
-            key-positions = <4 14>;
-            bindings = <&kp N5>;
-        };
-
-combo_6 {
-            timeout-ms = <50>;
-            key-positions = <5 15>;
-            bindings = <&kp N6>;
-        };
-
-combo_7 {
-            timeout-ms = <50>;
-            key-positions = <6 16>;
-            bindings = <&kp N7>;
-        };
-
-combo_8 {
-            timeout-ms = <50>;
-            key-positions = <7 17>;
-            bindings = <&kp N8>;
-        };
-
-combo_9 {
-            timeout-ms = <50>;
-            key-positions = <8 18>;
-            bindings = <&kp N9>;
-        };
-
-combo_0 {
-            timeout-ms = <50>;
-            key-positions = <9 19>;
-            bindings; 
-        };
-
-combo_minus {
-            timeout-ms = <50>;
-            key-positions = <6 7>;
-            bindings = <&kp MINUS>;
-        };
-
-combo_equal {
-            timeout-ms = <50>;
-            key-positions = <7 8>;
-            bindings = <&kp EQUAL>;
-        };
-
-combo_colon {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp RS(SEMI)>;
-        };
-
-combo_semi {
-            timeout-ms = <50>;
-            key-positions = <11 12 13>;
-            bindings = <&kp SEMI>;
-        };
-
-combo_quote {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            bindings = <&kp RS(SQT)>;
-        };
-
-combo_sqt {
-            timeout-ms = <50>;
-            key-positions = <16 17 18>;
-            bindings = <&kp SQT>;
-        };
-
-combo_lsbkt {
-            timeout-ms = <50>;
-            key-positions = <13 14>;
-            bindings = <&kp RS(N9)>;
-        };
-
-combo_rsbkt {
-            timeout-ms = <50>;
-            key-positions = <15 16>;
-            bindings = <&kp RS(N0)>;
-        };
-
-combo_lbkt {
-            timeout-ms = <50>;
-            key-positions = <12 13 14>;
-            bindings = <&kp LBKT>;
-        };
-
-combo_rbkt {
-            timeout-ms = <50>;
-            key-positions = <15 16 17>;
-            bindings = <&kp RBKT>;
-        };
-
-combo_lbbkt {
-            timeout-ms = <50>;
-            key-positions = <11 12 13 14>;
-            bindings = <&kp RS(LBKT)>;
-        };
-
-combo_rbbkt {
-            timeout-ms = <50>;
-            key-positions = <15 16 17 18>;
-            bindings = <&kp RS(RBKT)>;
-        };
-
-combo_comma {
-            timeout-ms = <50>;
-            key-positions = <20 21>;
-            bindings = <&kp COMMA>;
-        };
-
-combo_dot {
-            timeout-ms = <50>;
-            key-positions = <22 23>;
-            bindings = <&kp DOT>;
-        };
-
-combo_questionmark {
-            timeout-ms = <50>;
-            key-positions = <26 27>;
-            bindings = <&kp RS(SLASH)>;
-        };
-
-combo_bslh {
-            timeout-ms = <50>;
-            key-positions = <25 26 27>;
-            bindings = <&kp BSLH>;
-        };
-
-combo_exclamation {
-            timeout-ms = <50>;
-            key-positions = <20 21 22 23>;
-            bindings = <&kp RS(N1)>;
-        };
-
-combo_langlebk {
-            timeout-ms = <50>;
-            key-positions = <20 21 22>;
-            bindings = <&kp RS(COMMA)>;
-        };
-
-combo_ranglebk {
-            timeout-ms = <50>;
-            key-positions = <21 22 23>;
-            bindings = <&kp RS(DOT)>;
-        };
-    };
+            };
 
 };
