@@ -767,3 +767,5 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3)         RC(2,5) RC(2,6) RC(2,7) RC(2,8)
     #endif  // MOUSE_PS2_DRIVER_UART
   #endif  // MOUSE_PS2_DT_PRESENT
 #endif  // HAS_MOUSE_TP
+
+#define HAS_MOUSE_TP
