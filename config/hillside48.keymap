@@ -12,10 +12,6 @@
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/mouse_settings.h>
 
-#include "includes/mouse_keys.dtsi"
-#include "includes/mouse_tp.dtsi"
-#include "includes/mouse_tp_badjeff_input_listener.dtsi"
-
 #define DEFAULT 0
 
 / {
