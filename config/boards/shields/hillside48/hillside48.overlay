@@ -273,15 +273,6 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3)         RC(2,5) RC(2,6) RC(2,7) RC(2,8)
  *          doing.
  */
 
-#ifdef MOUSE_PS2_ALT_PINS
-    #undef MOUSE_PS2_PIN_SCL_PRO_MICRO
-    #undef MOUSE_PS2_PIN_SDA_PRO_MICRO
-    #undef MOUSE_PS2_PIN_SDA_PINCTRL
-
-    #define MOUSE_PS2_PIN_SCL_PRO_MICRO <&pro_micro 1 GPIO_ACTIVE_HIGH>
-    #define MOUSE_PS2_PIN_SDA_PRO_MICRO <&pro_micro 0 GPIO_ACTIVE_HIGH>
-    #define MOUSE_PS2_PIN_SDA_PINCTRL <NRF_PSEL(UART_RX, 0, 8)>
-#endif
 
 #define MOUSE_PS2_DT_PRESENT
 
